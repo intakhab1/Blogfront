@@ -114,7 +114,7 @@ export const BlogEditor = () => {
 		if (e.target.className.includes("disable")) {
 			return;
 		}
-		if (!title.length) {
+		if (!title?.length) {
 			return toast.error("Please add blog title to save as draft");
 		}
 
@@ -159,10 +159,7 @@ export const BlogEditor = () => {
 	return (
 		<>
 			<nav className="navbar">
-				<Link to="/" className="flex-none w-10">
-					<img src={theme == "light" ? darkLogo : lightLogo} />
-				</Link>
-				<p className="max-md:hidden text-black line-clamp-1 w-full">
+				<p className="text-xl text-black line-clamp-1 w-full">
 					{title?.length ? title : "New Blog"}
 				</p>
 				<div className="flex gap-4 ml-auto">

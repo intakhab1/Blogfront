@@ -47,10 +47,10 @@ const App = () => {
 	return (
 		<ThemeContext.Provider value={{ theme, setTheme }}>
 			<UserContext.Provider value={{ userAuth, setUserAuth }}>
+				<Navbar />
 				<Routes>
 					<Route path="/editor" element={<Editor />}></Route>
 					<Route path="/editor/:blog_id" element={<Editor />}></Route>
-					<Route path="/" element={<Navbar></Navbar>}>
 						<Route index element={<Home />}></Route>
 						<Route path="dashboard" element={<SideNavbar />}>
 							<Route path="blogs" element={<BlogsManagement />}></Route>
@@ -75,7 +75,6 @@ const App = () => {
 						<Route path="user/:id" element={<Profile />}></Route>
 						<Route path="blog/:blog_id" element={<BlogPage />}></Route>
 						<Route path="*" element={<PageNotFound />}></Route>
-					</Route>
 				</Routes>
 			</UserContext.Provider>
 		</ThemeContext.Provider>
