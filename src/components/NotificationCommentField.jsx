@@ -63,9 +63,9 @@ export const NotificationCommentField = ({
 				value={comment}
 				onChange={(e) => setComment(e.target.value)}
 				placeholder="Add a reply..."
-				className="input-box pl-5 placeholder:text-dark-grey resize-none h-[100px] overflow-auto"
+				className="input-box h-16 pl-5 placeholder:text-dark-grey resize-none overflow-auto"
 			></textarea>
-			<button onClick={handleComment} className="btn-dark mt-5 px-10">
+			<button onClick={handleComment} className="btn-dark mt-5 px-4 text-md">
 				Reply
 			</button>
 		</>

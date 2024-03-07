@@ -7,7 +7,7 @@ import { UserNavigationPanel } from "./UserNavigationPanel";
 import axios from "axios";
 import { storeInSession } from "../common/session";
 
-const Navbar = () => {
+export const Navbar = () => {
 	let { theme, setTheme } = useContext(ThemeContext);
 	const [searchBoxVisibility, setSearchBoxVisibility] = useState(false);
 	const [navPanelVisibility, setNavPanelVisibility] = useState(false);
@@ -81,23 +81,23 @@ const Navbar = () => {
 						input="text"
 						onKeyDown={handleSearch}
 						placeholder="Search"
-						className="w-1/2 md:w-auto bg-grey p-4 pl-6 pr-[12%] md:pr-6 rounded-full placeholder:text-dark-grey md:pl-12 "
+						className="w-300px md:w-auto bg-grey p-4 pl-6 pr-[12%] md:pr-6 rounded-full placeholder:text-dark-grey md:pl-12 "
 					></input>
-					<i className=" fi fi-rr-search absolute right-[10%] md:pointer-events-none md:left-5 top-1/2 -translate-y-1/2 text-xl text-dark-grey "></i>
+					<i className=" fi fi-rr-search absolute hidden md:block lg:block  right-[10%] md:pointer-events-none md:left-5 top-1/2 -translate-y-1/2 text-xl text-dark-grey "></i>
 				</div>
 				
 				<div className="flex items-center gap-1 md:gap-6 ml-auto">
-					{/* <button
+					<button
 						className="md:hidden w-11 h-11 rounded-full flex items-center justify-center hover:bg-black/10"
 						onClick={() => {
 							setSearchBoxVisibility((currentVal) => !currentVal);
 						}}
 					>
-						<i className="fi fi-rr-search text-xl"></i>
-					</button> */}
+						<i className="fi fi-rr-search text-xl absolute"></i>
+					</button>
 					<Link to="/editor" className=" md:flex gap-2 rounded-full link ">
 						<i className="fi fi-rr-file-edit"></i>
-						<p className="hidden sm:block md:block lg:block xl:block">Write</p>
+						<p className="hidden md:block lg:block xl:block">Write</p>
 					</Link>
 					<button
 						className="w-11 h-11 rounded-full relative hover:bg-black/10"
@@ -152,4 +152,3 @@ const Navbar = () => {
 		</>
 	);
 };
-export default Navbar;

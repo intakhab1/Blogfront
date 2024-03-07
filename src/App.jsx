@@ -1,4 +1,4 @@
-import Navbar from "./components/Navbar";
+import { Navbar } from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import { UserAuthForm } from "./pages/UserAuthForm";
 import { createContext, useContext, useEffect, useState } from "react";
