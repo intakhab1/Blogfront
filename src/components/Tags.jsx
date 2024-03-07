@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { EditorContext } from "../pages/editor"
+import { EditorContext } from "../pages/Editor"
 
 export const Tags = ({tag, tagIndex}) => {
     let {setBlog, blog, blog:{ tags } } = useContext(EditorContext)

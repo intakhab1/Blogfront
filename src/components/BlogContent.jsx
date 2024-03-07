@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 export const BlogContent = ({ block }) => {
 
     let { type, data } = block

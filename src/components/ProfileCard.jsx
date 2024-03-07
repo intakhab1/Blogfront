@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-
 export const ProfileCard = ({user}) => {
     let { personal_info: {fullname, username, profile_img} } = user;
     console.log(fullname)
