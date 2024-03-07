@@ -6,7 +6,7 @@ import { Toaster } from "react-hot-toast";
 import { InPageNavigation } from "../components/InpageNavigation";
 import Loader from "../components/Loader";
 import { NoData } from "../components/NoData";
-import { PageAnimation } from "../common/pageAnimation";
+import { PageAnimation } from "../common/PageAnimation";
 import {
 	ManageDraftBlogCard,
 	ManagePublishedBlogCard,

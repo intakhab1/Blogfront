@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { PageAnimation  } from "../common/pageAnimation"
+import { PageAnimation  } from "../common/PageAnimation"
 import { Link } from "react-router-dom"
 import { UserContext } from "../App"
 import { removeFromSession } from "../common/session"

@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { UserContext } from '../App'
-import { PageAnimation } from '../common/pageAnimation';
+import { PageAnimation } from '../common/PageAnimation';
 import Loader from '../components/Loader';
 import { AboutUser } from '../components/AboutUser';
 import { filterPaginationData } from '../common/filterPaginationData';
@@ -29,14 +29,12 @@ export const profileDataStructure = {
 }
 
 export const Profile = () => {
-    
     let { userAuth: { username} } = useContext(UserContext)
     let { id: profileId } = useParams();
     let [profile, setProfile] = useState(profileDataStructure);
     let [blogs, setBlogs] = useState(null);
     let [loading, setLoading] = useState(true)
     let [currentProfile, setCurrentProfile] = useState("")
-
     let { 
         personal_info: {fullname, username: profile_username, profile_img, bio}, 
         account_info: {total_posts, total_reads}, 

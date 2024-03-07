@@ -1,9 +1,7 @@
 import React from 'react'
 
 export const BlogContent = ({ block }) => {
-
     let { type, data } = block
-
     const Img = ({url, caption}) => {
         return <div>
             <img src={url}/>

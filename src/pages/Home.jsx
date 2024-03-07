@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { PageAnimation } from "../common/pageAnimation"
+import { PageAnimation } from "../common/PageAnimation"
 import { InPageNavigation, activeTabRef , activeTabLineRef} from "../components/InpageNavigation"
 import Loader from "../components/Loader"
 import axios from "axios"
@@ -10,7 +10,6 @@ import { filterPaginationData } from "../common/filterPaginationData"
 import { LoadMore } from "../components/LoadMore"
 import { PostCard } from "../components/PostCard"
 // import { Timeline } from "../components/Timeline"
-
 
 export const Home = () => {
 

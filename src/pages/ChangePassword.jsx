@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from "react";
-import { PageAnimation } from "../common/pageAnimation";
+import { PageAnimation } from "../common/PageAnimation";
 import { InputBox } from "../components/InputBox";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";

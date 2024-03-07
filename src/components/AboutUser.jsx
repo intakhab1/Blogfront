@@ -29,10 +29,6 @@ export const AboutUser = ({ bio, social_links, joinedAt, className }) => {
   )
 }
 
-
-
-
-
 import React, { useState } from 'react';
 
 const BlogPost = ({ content }) => {

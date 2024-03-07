@@ -12,7 +12,6 @@ import Blog from "./Schema/Blog.js";
 import Notification from "./Schema/Notification.js";
 import Comment from "./Schema/Comment.js";
 
-// app.use(cors());
 app.use(
 	cors({
 		origin: "*",

@@ -1,5 +1,5 @@
 import { Toaster, toast } from "react-hot-toast";
-import { PageAnimation } from "../common/pageAnimation";
+import { PageAnimation } from "../common/PageAnimation";
 import { EditorContext } from "../pages/Editor";
 import { useContext } from "react";
 import { Tags } from "./Tags";

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { UserContext } from "../App";
 import axios from "axios";
 import { profileDataStructure } from "./Profile";
-import { PageAnimation } from "../common/pageAnimation";
+import { PageAnimation } from "../common/PageAnimation";
 import Loader from "../components/Loader";
 import toast, { Toaster } from "react-hot-toast";
 import { InputBox } from "../components/InputBox";

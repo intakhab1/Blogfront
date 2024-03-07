@@ -3,7 +3,7 @@ import { BlogContext } from "../pages/BlogPage";
 import { CommentField } from "../components/CommentField";
 import axios from "axios";
 import { NoData } from "./NoData";
-import { PageAnimation } from "../common/pageAnimation";
+import { PageAnimation } from "../common/PageAnimation";
 import { CommentCard } from "./CommentCard";
 import { LoadMore } from "./LoadMore";
 

@@ -1,6 +1,6 @@
 import { Link, Navigate } from "react-router-dom";
 import { InputBox } from "../components/InputBox";
-import { PageAnimation } from "../common/pageAnimation";
+import { PageAnimation } from "../common/PageAnimation";
 import googleIcon from "../imgs/google.png";
 import { Toaster, toast } from "react-hot-toast";
 import axios from "axios";

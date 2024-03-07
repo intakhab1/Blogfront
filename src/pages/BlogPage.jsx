@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import { PageAnimation } from "../common/pageAnimation";
+import { PageAnimation } from "../common/PageAnimation";
 import Loader from "../components/Loader";
 import { getDate, getFullDay } from "../common/date";
 import { BlogEdit } from "../components/BlogEdit";

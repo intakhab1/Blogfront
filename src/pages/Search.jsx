@@ -13,7 +13,6 @@ import { ProfileCard } from "../components/ProfileCard";
 
 export const Search = () => {
 	let { query } = useParams();
-
 	let [blogs, setBlogs] = useState(null);
 	let [users, setUsers] = useState(null);
 

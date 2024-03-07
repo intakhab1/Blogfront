@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../App";
 import { filterPaginationData } from "../common/filterPaginationData";
 import Loader from "../components/Loader";
-import { PageAnimation } from "../common/pageAnimation";
+import { PageAnimation } from "../common/PageAnimation";
 import { NotificationCard } from "../components/NotificationCard";
 import { NoData } from "../components/NoData";
 import { LoadMore } from "../components/LoadMore";
