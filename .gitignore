@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/dist
 /.pnp
 .pnp.js
 package-lock.json
@@ -11,6 +12,7 @@ package-lock.json
 
 # production
 /build
+dist
 
 # misc
 .DS_Store
