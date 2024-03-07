@@ -10,7 +10,7 @@ import { useNavigate, useParams } from "react-router-dom";
 export const PublishForm = () => {
 	let { blog_id } = useParams();
 	let navigate = useNavigate();
-	let charLimit = 200;
+	let charLimit = 100;
 	let tagLimit = 5;
 
 	let {
@@ -35,17 +35,12 @@ export const PublishForm = () => {
 		if (!title.length) {
 			return toast.error("Please add blog title");
 		}
-		if (!desc.length || desc.length > charLimit) {
-			return toast.error(
-				`Please add blog description under ${charLimit} characters`
-			);
-		}
 		if (!banner.length) {
 			return toast.error("Please add blog banner");
 		}
-		if (!tags.length) {
-			return toast.error("Please add a blog tag");
-		}
+		// if (!tags.length) {
+		// 	return toast.error("Please add a blog tag");
+		// }
 		// loader
 		let loading = toast.loading("Publishing...");
 		e.target.classList.add("disable");
@@ -114,13 +109,13 @@ export const PublishForm = () => {
 			<section className="w-screen min-h-screen grid items-center lg:grid-cols-2 py-16 lg:gap-4">
 				<Toaster />
 				<button
-					className="w-12 h-12 absolute right-[5vw] z-10 top-[5%] lg:top-[10%]"
+					className="w-12 h-12 absolute right-[5vw] z-10 top-[15%]"
 					onClick={handleClose}
 				>
-					<i className="fi fi-br-cross"></i>
+					<i className="fi fi-br-cross text-xl font-bold"></i>
 				</button>
 				<div className="max-w-[550px] center ">
-					<p className="text-dark-grey mb-1">Preview</p>
+					<p className="text-dark-grey mb-8 -mt-7 text-2xl font-bold">Preview</p>
 					<div className="w-full aspect-video rounded-lg overflow-hidden bg-grey mt-4">
 						<img src={banner} />
 					</div>
@@ -140,9 +135,9 @@ export const PublishForm = () => {
 						defaultValue={title}
 						onChange={hanldeTitleChange}
 					/>
-					<p className="text-dark-grey mb-2 mt-9">Overview of the blog</p>
+					<p className="text-dark-grey mb-2 mt-9">Caption</p>
 					<textarea
-						className="resize-none h-40 leading-7 input-box pl-4"
+						className="resize-none h-20 leading-7 input-box pl-4"
 						defaultValue={desc}
 						maxLength={charLimit}
 						onChange={handleDescription}
@@ -152,12 +147,12 @@ export const PublishForm = () => {
 						{charLimit - desc.length} Characters left
 					</p>
 					<p className="text-dark-grey mb-2 mt-9">
-						Topics - (Helps to improve ranking and searchability of the blog){" "}
+						Tags - (Ex: tech, food, travel, etc. For better reach){" "}
 					</p>
 					<div className="relative input-box pl-2 py-2 pb-4">
 						<input
 							type="text"
-							placeholder="Topic"
+							placeholder="Tag"
 							className="sticky input-box bg-white top-0 left-0 pl-4 mb-3 focus:bg-white"
 							onKeyDown={handleKeydownTags}
 						/>

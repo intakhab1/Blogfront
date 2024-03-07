@@ -282,20 +282,20 @@ app.post("/create-blog", userMiddleware, (req, res) => {
 
 	// Check if it is draft
 	if (!draft) {
-		if (!desc.length || desc.length > 200) {
-			return res
-				.status(403)
-				.json({ error: "Please provide blog description under 200 character" });
-		}
+		// if (!desc.length || desc.length > 200) {
+		// 	return res
+		// 		.status(403)
+		// 		.json({ error: "Please add caption" });
+		// }
 		if (!banner.length) {
 			return res.status(403).json({ error: "Please provide blog banner" });
 		}
 		if (!content.blocks.length) {
 			return res.status(403).json({ error: "Please provide blog content" });
 		}
-		if (!tags.length || tags.length > 5) {
-			return res.status(403).json({ error: "Please provide blog tags" });
-		}
+		// if (!tags.length || tags.length > 5) {
+		// 	return res.status(403).json({ error: "Please provide blog tags" });
+		// }
 	}
 
 	tags = tags.map((tag) => tag.toLowerCase());

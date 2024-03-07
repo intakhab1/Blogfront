@@ -12,6 +12,7 @@ import axios from "axios";
 import { ThemeContext, UserContext } from "../App";
 
 export const BlogEditor = () => {
+	let charLimit = 100;
 	let {
 		blog,
 		blog: { title, banner, content, tags, desc },
@@ -65,6 +66,12 @@ export const BlogEditor = () => {
 		let img = e.target;
 		img.src = theme == "light" ? lighBanner : darkBanner;
 	};
+
+	const handleDescription = (e) => {
+		let input = e.target.value;
+		setBlog({ ...blog, desc: input });
+	};
+
 	// Text Editor
 	useEffect(() => {
 		if (!textEditor.isReady) {
@@ -87,6 +94,12 @@ export const BlogEditor = () => {
 		if (!title?.length) {
 			return toast.error("Please provide blog title.");
 		}
+		if (!desc.length || desc.length > charLimit) {
+			return toast.error(
+				`Please add caption`
+			);
+		}
+		// description (desc)
 		if (textEditor.isReady) {
 			textEditor
 				.save()
@@ -96,7 +109,7 @@ export const BlogEditor = () => {
 						setEditorState("publish");
 					} else {
 						return toast.error(
-							"Please provide blog description to publish the blog."
+							"Please add description "
 						);
 					}
 				})
@@ -198,6 +211,19 @@ export const BlogEditor = () => {
 							onChange={handleTitleChange}
 						></textarea>
 						<hr className="w-full opacity-10 my-5 " />
+
+						<p className="text-dark-grey mb-2 mt-9">Caption</p>
+						<textarea
+							className="resize-none h-20 leading-7 input-box pl-4"
+							defaultValue={desc}
+							maxLength={charLimit}
+							onChange={handleDescription}
+							onKeyDown={handleKeydown}
+						></textarea>
+						<p className="mt-1 text-dark-grey text-sm text-right">
+							{charLimit - desc.length} Characters left
+						</p>
+						<p className="text-dark-grey mb-2 mt-9">Description</p>
 						<div id="textEditor" className="font-gelasio"></div>
 					</div>
 				</section>

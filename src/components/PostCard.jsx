@@ -11,7 +11,7 @@ export const PostCard = ({ blog, index }) => {
 		publishedAt,
 		banner,
 		desc,
-		activity: { total_likes },
+		activity: { total_likes, total_comments },
 	} = blog;
 
 	return (
@@ -32,9 +32,6 @@ export const PostCard = ({ blog, index }) => {
 				</div>
 
 				<h1 className="blog-title -mt-4">{title}</h1>
-				<p className="my-3 text-xl font-gelasio leading-7 md:max-[1100px]:hidden line-clamp-2  max-sm:hidden  ">
-					{desc}
-				</p>
 
 				<div className="w-full h-64 bg-grey aspect-square ">
 					<img
@@ -42,11 +39,18 @@ export const PostCard = ({ blog, index }) => {
 						className="mt-3 w-full h-full a object-cover aspect-square"
 					/>
 				</div>
+				<p className="mt-4 my-3 text-xl font-gelasio leading-7 md:max-[1100px]:hidden line-clamp-2  ">
+					{desc}
+				</p>
 
-				<div className="flex gap-4 mt-7 mb-7">
+				<div className="flex gap-4 mt-4 mb-6">
 					<span className="ml-3 flex items-center gap-2 text-dark-grey">
 						<i className="fi fi-rr-heart text-xl"></i>
 						{total_likes}
+					</span>
+					<span className="ml-3 flex items-center gap-2 text-dark-grey">
+						<i className="fi fi-rr-comment-dots text-xl"></i>
+						{total_comments}
 					</span>
 				</div>
 			</div>
