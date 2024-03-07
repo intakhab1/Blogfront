@@ -10,7 +10,7 @@ import { useContext, useRef } from "react";
 import { authWithGoogle } from "../common/firebase";
 
 export const UserAuthForm = ({ type }) => {
-	const authForm = useRef();
+	// const authForm = useRef();
 	let {
 		userAuth: { token },
 		setUserAuth,
@@ -32,7 +32,7 @@ export const UserAuthForm = ({ type }) => {
 		e.preventDefault();
 
 		let serverRoute = type == "log-in" ? "/login" : "/signup";
-		let form = new FormData(authForm.current);
+		let form = new FormData(formElement);
 		let formData = {};
 
 		for (let [key, value] of form.entries()) {
@@ -87,7 +87,7 @@ export const UserAuthForm = ({ type }) => {
 		<PageAnimation keyValue={type}>
 			<section className="h-cover flex items-center justify-center">
 				<Toaster />
-				<form ref={authForm} className="w-[80%] max-w-[400px]">
+				<form id="formElement" className="w-[80%] max-w-[400px]">
 					<h1 className="text-4xl font-gelasio capitalize text-center mb-24">
 						{type == "log-in"
 							? "Welcome Back"
