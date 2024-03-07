@@ -12,14 +12,13 @@ import Blog from "./Schema/Blog.js";
 import Notification from "./Schema/Notification.js";
 import Comment from "./Schema/Comment.js";
 
-app.use((req,res,next)=>{
-    res.setHeader('Access-Control-Allow-Origin','*');
-    res.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
-    res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
-    next(); 
-})
-
-app.use(cors());
+app.use(
+	cors({
+		origin: "*",
+		// origin:"http://localhost:3000", // frontend
+		credentials: true,
+	})
+);
 
 app.use(express.json());
 dotenv.config();
@@ -1049,6 +1048,14 @@ app.post("/delete-blog", userMiddleware, (req, res) => {
 		.catch((err) => {
 			return res.status(500).json({ error: err.message });
 		});
+});
+
+// Default server for testing
+app.get("/", (req, res) => {
+	return res.json({
+		success: true,
+		message: "Your server is up and running ...",
+	});
 });
 
 app.listen(PORT, () => {
