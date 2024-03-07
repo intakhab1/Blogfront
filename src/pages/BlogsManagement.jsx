@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../App";
 import { filterPaginationData } from "../common/filterPaginationData";
 import { Toaster } from "react-hot-toast";
-import { InPageNavigation } from "../components/InpageNavigation";
+import { InPageNavigation } from "../components/InPageNavigation";
 import Loader from "../components/Loader";
 import { NoData } from "../components/NoData";
 import { PageAnimation } from "../common/PageAnimation";

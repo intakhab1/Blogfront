@@ -6,7 +6,7 @@ import { PageAnimation } from '../common/PageAnimation';
 import Loader from '../components/Loader';
 import { AboutUser } from '../components/AboutUser';
 import { filterPaginationData } from '../common/filterPaginationData';
-import { InPageNavigation } from '../components/InpageNavigation';
+import { InPageNavigation } from '../components/InPageNavigation';
 import { PostCard } from '../components/PostCard';
 import { BlogPostCard } from '../components/BlogPostCard';
 import { NoData } from '../components/NoData';

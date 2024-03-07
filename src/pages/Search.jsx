@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
-import { InPageNavigation } from "../components/InpageNavigation";
+import { InPageNavigation } from "../components/InPageNavigation";
 import { useEffect, useState } from "react";
 import Loader from "../components/Loader";
 // import { PostCard } from "../components/PostCard";
 import { NoData } from "../components/NoData";
 import { filterPaginationData } from "../common/filterPaginationData";
 import axios from "axios";
-import { PageAnimation } from "../common/pageAnimation";
+import { PageAnimation } from "../common/PageAnimation";
 import { BlogPostCard } from "../components/BlogPostCard";
 import { LoadMore } from "../components/LoadMore";
 import { ProfileCard } from "../components/ProfileCard";
