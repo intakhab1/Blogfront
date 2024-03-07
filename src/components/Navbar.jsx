@@ -99,7 +99,7 @@ const Navbar = () => {
 						<p className="hidden sm:block md:block lg:block xl:block">Write</p>
 					</Link>
 					<button
-						className="w-12 h-12 rounded-full relative hover:bg-black/10"
+						className="w-11 h-11 rounded-full relative hover:bg-black/10"
 						onClick={changeTheme}
 					>
 						<i

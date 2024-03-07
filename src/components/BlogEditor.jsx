@@ -1,6 +1,4 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
-import lightLogo from "../imgs/logo-light.png";
-import darkLogo from "../imgs/logo-dark.png";
+import { useNavigate, useParams } from "react-router-dom";
 import { PageAnimation } from "../common/PageAnimation";
 import lighBanner from "../imgs/blog-banner-light.png";
 import darkBanner from "../imgs/blog-banner-dark.png";
