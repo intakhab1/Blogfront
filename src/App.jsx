@@ -31,7 +31,7 @@ const App = () => {
 		userInSession
 			? setUserAuth(JSON.parse(userInSession))
 			: setUserAuth({ token: null });
-
+		
 		// dark and light theme
 		let themeInSession = lookInSession("theme");
 		if (themeInSession) {
