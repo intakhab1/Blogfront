@@ -72,7 +72,7 @@ export const UserAuthForm = ({ type }) => {
 		authWithGoogle()
 			.then((user) => {
 				let serverRoute = "/google-auth";
-				let formData = { token: user.accessToken };
+				let formData = { token: user?.accessToken };
 				apiRequest(serverRoute, formData);
 			})
 			.catch((err) => {
