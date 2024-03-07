@@ -49,32 +49,23 @@ const App = () => {
 			<UserContext.Provider value={{ userAuth, setUserAuth }}>
 				<Navbar />
 				<Routes>
+					<Route path="/" element={<Home />}></Route>
 					<Route path="/editor" element={<Editor />}></Route>
 					<Route path="/editor/:blog_id" element={<Editor />}></Route>
-						<Route index element={<Home />}></Route>
-						<Route path="dashboard" element={<SideNavbar />}>
-							<Route path="blogs" element={<BlogsManagement />}></Route>
-							<Route path="notifications" element={<Notifications />}></Route>
-						</Route>
-						<Route path="settings" element={<SideNavbar />}>
-							<Route path="edit-profile" element={<EditProfile />}></Route>
-							<Route
-								path="change-password"
-								element={<ChangePassword />}
-							></Route>
-						</Route>
-						<Route
-							path="login"
-							element={<UserAuthForm type="log-in" />}
-						></Route>
-						<Route
-							path="signup"
-							element={<UserAuthForm type="sign-up" />}
-						></Route>
-						<Route path="search/:query" element={<Search />}></Route>
-						<Route path="user/:id" element={<Profile />}></Route>
-						<Route path="blog/:blog_id" element={<BlogPage />}></Route>
-						<Route path="*" element={<PageNotFound />}></Route>
+					<Route path="dashboard" element={<SideNavbar />}>
+						<Route path="blogs" element={<BlogsManagement />}></Route>
+						<Route path="notifications" element={<Notifications />}></Route>
+					</Route>
+					<Route path="settings" element={<SideNavbar />}>
+						<Route path="edit-profile" element={<EditProfile />}></Route>
+						<Route path="change-password" element={<ChangePassword />} ></Route>
+					</Route>
+					<Route path="login" element={<UserAuthForm type="log-in" />}></Route>
+					<Route path="signup" element={<UserAuthForm type="sign-up" />}></Route>
+					<Route path="search/:query" element={<Search />}></Route>
+					<Route path="user/:id" element={<Profile />}></Route>
+					<Route path="blog/:blog_id" element={<BlogPage />}></Route>
+					<Route path="*" element={<PageNotFound />}></Route>
 				</Routes>
 			</UserContext.Provider>
 		</ThemeContext.Provider>
