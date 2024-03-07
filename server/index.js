@@ -12,14 +12,14 @@ import Blog from "./Schema/Blog.js";
 import Notification from "./Schema/Notification.js";
 import Comment from "./Schema/Comment.js";
 
-app.use(cors());
-// app.use(
-// 	cors({
-// 		origin: "*",
-// 		// origin:"http://localhost:3000", // frontend
-// 		credentials: true,
-// 	})
-// );
+// app.use(cors());
+app.use(
+	cors({
+		origin: "*",
+		// origin:"http://localhost:5173", // frontend
+		credentials: true,
+	})
+);
 
 app.use(express.json());
 dotenv.config();
