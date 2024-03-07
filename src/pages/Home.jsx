@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { PageAnimation } from "../common/PageAnimation"
-import { InPageNavigation, activeTabRef , activeTabLineRef} from "../components/InpageNavigation"
+import { InPageNavigation, activeTabRef , activeTabLineRef } from "../components/InPageNavigation"
 import Loader from "../components/Loader"
 import axios from "axios"
 import { BlogPostCard } from "../components/BlogPostCard"
