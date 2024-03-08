@@ -2,10 +2,11 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { getDate, getFullDay } from "../common/date";
 import { NotificationCommentField } from "./NotificationCommentField";
-import { UserContext } from "../App";
+import { ThemeContext, UserContext } from "../App";
 import axios from "axios";
 
 export const NotificationCard = ({ data, index, notificationState }) => {
+	let { theme, setTheme } = useContext(ThemeContext)
 	let {
 		seen,
 		reply,
@@ -132,7 +133,7 @@ export const NotificationCard = ({ data, index, notificationState }) => {
 							""
 						)}
 						<button
-							onClick={(e) => handleDelete(reply._id, "reply", e.target)}
+							onClick={(e) => handleDelete(comment._id, "comment", e.target)}
 							className="underline hover:text-black"
 						>
 							Delete
@@ -158,35 +159,32 @@ export const NotificationCard = ({ data, index, notificationState }) => {
 				""
 			)}
 			{reply ? (
-				<div className="ml-20 p-5 bg-grey mt-5 rounded-md">
-					<div className="flex gap-3 mb-3">
-						<img src={author_profile_img} className="w-8 h-8 rounded-full " />
-						<div>
-							<h1 className="font-medium text-xl text-dark-grey">
+				<div className="ml-20 p-3 bg-grey mt-3 rounded-md">
+				
+					<div className="flex gap-2 mb-2">
+						<img src={author_profile_img} className="flex-none w-8 h-8 rounded-full " />
+
+						<div className="flex justify-between gap-2 ">
+							<h1 className="font-medium text-xl text-dark-grey ">
 								<Link
 									to={`/user/${author_username}`}
 									className="mx-1 text-black underline "
 								>
 									@{author_username}
 								</Link>
-								<span className="font-normal">replied to</span>
-								<Link
-									to={`/user/${username}`}
-									className="mx-1 text-black underline "
-								>
-									@{username}
-								</Link>
 							</h1>
 						</div>
 					</div>
-					<p className="ml-14 font-gelasio text-xl my-2">{reply.comment}</p>
 
-					<button
-						onClick={(e) => handleDelete(comment._id, "reply", e.target)}
-						className="underline ml-14 mt-2 hover:text-black"
-					>
-						Delete
-					</button>
+					<div className="flex justify-between gap-4 ">
+						<p className="font-gelasio text-xl overflow-auto no-scrollbar">{reply.comment}</p>
+						<button
+							onClick={(e) => handleDelete(reply._id, "reply", e.target)}
+							className=" hover:text-black"
+							>
+							<i className="fi fi-rr-trash"></i>
+						</button> 
+					</div>
 				</div>
 			) : (
 				""

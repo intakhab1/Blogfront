@@ -59,15 +59,18 @@ export const NotificationCommentField = ({
 	return (
 		<>
 			<Toaster />
-			<textarea
-				value={comment}
-				onChange={(e) => setComment(e.target.value)}
-				placeholder="Add a reply..."
-				className="input-box h-16 pl-5 placeholder:text-dark-grey resize-none overflow-auto"
-			></textarea>
-			<button onClick={handleComment} className="btn-dark mt-5 px-4 text-md">
-				Reply
-			</button>
+			<div className="flex gap-2 -mt-4">
+				<textarea
+					value={comment}
+					onChange={(e) => setComment(e.target.value)}
+					placeholder="Add a reply..."
+					className="input-box h-14 pl-5 placeholder:text-dark-grey resize-none overflow-hidden ml-24"
+				></textarea>
+				<button onClick={handleComment} className="btn-dark px-4 rounded-3xl text-sm ">
+					Reply
+				</button>
+			</div>
+
 		</>
 	);
 };

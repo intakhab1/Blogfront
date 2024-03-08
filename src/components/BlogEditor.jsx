@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { PageAnimation } from "../common/PageAnimation";
-import lighBanner from "../imgs/blog-banner-light.png";
+import lightBanner from "../imgs/blog-banner-light.png";
 import darkBanner from "../imgs/blog-banner-dark.png";
 import { UploadImage } from "../common/aws";
 import { useContext, useEffect } from "react";
@@ -64,7 +64,7 @@ export const BlogEditor = () => {
 	};
 	const handleImgError = (e) => {
 		let img = e.target;
-		img.src = theme == "light" ? lighBanner : darkBanner;
+		img.src = theme == "light" ? lightBanner : darkBanner;
 	};
 
 	const handleDescription = (e) => {
@@ -167,6 +167,7 @@ export const BlogEditor = () => {
 		}
 	};
 
+
 	return (
 		<>
 			<nav className="navbar">
@@ -224,7 +225,7 @@ export const BlogEditor = () => {
 							{charLimit - desc.length} Characters left
 						</p>
 						<p className="text-dark-grey mb-2 mt-9">Description</p>
-						<div id="textEditor" className="font-gelasio"></div>
+						<div id="textEditor" className="font-gelasio bg-grey pl-4 rounded-md"></div>
 					</div>
 				</section>
 			</PageAnimation>
