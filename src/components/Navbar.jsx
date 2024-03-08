@@ -72,7 +72,7 @@ export const Navbar = () => {
 				</Link>
 				<div
 					className={
-						"absolute bg-white left-0  mt-0.5 border-b border-grey py-4 px-[5vw] md:border-0 md:block md:relative md:inset-0 md:p-0 md:w-auto md:show " +
+						"absolute bg-white w-1/2 left-0  mt-0.5 border-b border-grey py-4 px-[5vw] md:border-0 md:block md:relative md:inset-0 md:p-0 md:w-auto md:show " +
 						(searchBoxVisibility ? "show" : "hide")
 					}
 				>
@@ -81,7 +81,7 @@ export const Navbar = () => {
 						input="text"
 						onKeyDown={handleSearch}
 						placeholder="Search"
-						className="w-250px md:w-auto bg-grey p-4 pl-6 pr-[18%] md:pr-6 rounded-full placeholder:text-dark-grey md:pl-12 "
+						className="w-full md:w-auto bg-grey p-4 pl-6 pr-[18%] md:pr-6 rounded-full placeholder:text-dark-grey md:pl-12 "
 					></input>
 					<i className=" fi fi-rr-search absolute hidden md:block lg:block right-[10%] md:pointer-events-none md:left-5 top-1/2 -translate-y-1/2 text-xl text-dark-grey "></i>
 				</div>
