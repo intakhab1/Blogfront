@@ -215,8 +215,9 @@ export const BlogEditor = () => {
 
 						<p className="text-dark-grey mb-2 mt-9">Caption</p>
 						<textarea
-							className="resize-none h-20 leading-7 input-box pl-4"
+							className="resize-none h-20 leading-7 input-box pl-4 placeholder:opacity-40"
 							defaultValue={desc}
+							placeholder="Add caption"
 							maxLength={charLimit}
 							onChange={handleDescription}
 							onKeyDown={handleKeydown}
