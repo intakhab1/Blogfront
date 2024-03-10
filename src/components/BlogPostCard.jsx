@@ -8,7 +8,7 @@ export const BlogPostCard = ({ content, author }) => {
 		title,
 		desc,
 		banner,
-		activity: { total_likes },
+		activity: { total_likes, total_comments },
 		blog_id: id,
 	} = content;
 	let { fullname, profile_img, username } = author;
@@ -37,6 +37,11 @@ export const BlogPostCard = ({ content, author }) => {
 						<i className="fi fi-rr-heart text-xl"></i>
 						{total_likes}
 					</span>
+					<span className="ml-3 flex items-center gap-2 text-dark-grey">
+						<i className="fi fi-rr-comment-dots text-xl"></i>
+						{total_comments}
+					</span>
+
 				</div>
 			</div>
 

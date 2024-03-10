@@ -185,9 +185,9 @@ export const CommentCard = ({ index, leftVal, commentData }) => {
     }
 
 	return (
-		<div className="w-full" style={{ paddingLeft: `${leftVal * 10}px` }}>
+		<div className="w-full" >
 			<Toaster />
-			<div className="my-2 p-2 rounded-md  border-grey">
+			<div className="w-full my-2 p-2 rounded-md  border-grey">
 				<div className="flex gap-3 items-center mb-1 ">
 
 					<Link
