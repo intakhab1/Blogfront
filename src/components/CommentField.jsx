@@ -114,7 +114,6 @@ export const CommentField = ({
 				></input>
 				<button onClick={handleComment} className="absolute top-1/2 right-3 transform -translate-y-1/2 focus:outline-none">
 				<i className="fi fi-rs-paper-plane text-sm"></i>
-
 					{/* {action} */}
 				</button>
 			</div>

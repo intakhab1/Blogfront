@@ -75,7 +75,7 @@ export const Home = () => {
     // Category filter
     const handleTagFilterBtn = (e) =>{
         let category = e.target.innerText.toLowerCase();
-        console.log(category)
+        // console.log(category)
         setBlogs(null);
         if(pageState === category){
             setPageState("latest")

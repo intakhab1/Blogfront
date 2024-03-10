@@ -190,20 +190,15 @@ export const CommentCard = ({ index, leftVal, commentData }) => {
 			<div className="w-full my-2 p-2 rounded-md  border-grey">
 				<div className="flex gap-3 items-center mb-1 ">
 
-					<Link
-						to={`/user/${commented_by_username}`}
-					>
-						<img src={profile_img} className="flex-none w-6 h-6 rounded-full " />
+					<Link to={`/user/${commented_by_username}`}
+					><img src={profile_img} className="flex-none w-6 h-6 rounded-full " />
 					</Link>
 
-						<p className="line-clamp-1 ">
-						<Link
-						to={`/user/${commented_by_username}`}
-					>
-							{fullname} @{commented_by_username}
-					</Link>
-
-						</p>
+					<p className="line-clamp-1 ">
+						<Link to={`/user/${commented_by_username}`}
+						>{fullname} @{commented_by_username}
+						</Link>
+					</p>
 
 					<p className="min-w-fit opacity-50 text-sm">{getFullDay(commentedAt)}</p>
 				</div>
@@ -222,7 +217,7 @@ export const CommentCard = ({ index, leftVal, commentData }) => {
 						<button
 							onClick={ViewReplies}
 							className="ml-2 flex items-center gap-2 text-dark-grey p-2 px-3 rounded-md min-w-fit opacity-50 text-sm"
-						>	... View {children.length} replies
+						>	... {children.length ? `View ${children.length }` : "0"} replies
 						</button>
 					)}
 					<button onClick={handleReply} className="underline min-w-fit opacity-50 text-sm">
