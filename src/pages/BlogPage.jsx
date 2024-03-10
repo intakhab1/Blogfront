@@ -116,29 +116,28 @@ export const BlogPage = () => {
 							<h1 className="blog-title">{title}</h1>
 							<div className="flex justify-between my-8  ">
 								<div className="flex gap-2 items-center mb-7">
-									<img src={profile_img} className="w-6 h-6 rounded-full" />
-									<p className="line-clamp-1">{fullname} </p>
+									<Link
+										to={`/user/${author_username}`}>
+										<img src={profile_img} className="w-6 h-6 rounded-full" />
+									</Link>
+									<Link
+										to={`/user/${author_username}`}>
+										<p className="line-clamp-1">{fullname} </p>
+									</Link>
 									<Link
 										to={`/user/${author_username}`}
-										className="underline line-clamp-1 opacity-50 text-sm "
-									>
+										className="underline line-clamp-1 opacity-50 text-sm ">
 										@{author_username}
 									</Link>
 									<p className="min-w-fit opacity-50 text-sm">
 										{getFullDay(publishedAt)}
 									</p>
 								</div>
-
-								{/* <div className='flex items-start gap-5 '>
-									<img src={profile_img} className='h-12 w-12 rounded-full ' />
-									<p className='capitalize'>
-										{fullname} <Link to={`/user/${author_username}`} className='underline opacity-75 text-dark-grey text-sm'>@{author_username}</Link>
-									</p>
-								</div>
-								<p className='max-sm:mt-1 max-sm:ml-12 max-sm:pl-5 text-dark-grey opacity-75'>{getDate(publishedAt)}</p> */}
 							</div>
 						</div>
+
 						<BlogEdit />
+
 						<div className="font-gelasio my-12 blog-page-content">
 							{content[0].blocks?.map((block, i) => {
 								return (
@@ -149,6 +148,7 @@ export const BlogPage = () => {
 							})}
 						</div>
 						<BlogEdit />
+						
 						{/* Render Similar blog if any */}
 						{similarBlogs != null && similarBlogs.length ? (
 							<>

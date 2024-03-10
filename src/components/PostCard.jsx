@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { getDate, getFullDay } from "../common/date";
+import { BlogEdit } from "./BlogEdit";
 
 export const PostCard = ({ blog, index }) => {
 	let {
@@ -19,8 +20,6 @@ export const PostCard = ({ blog, index }) => {
 			to={`/blog/${id}`}
 			className="w-full flex gap-8 mb-8 items-center border-b border-grey pb-5 "
 		>
-			{/* <h1 className="blog-index hidden sm:hidden md:block lg:block" >{index < 10 ? "0" + (index + 1) : index}</h1> */}
-
 			<div className="w-full">
 				<div className="flex gap-2 items-center mb-7">
 					<img src={profile_img} className="w-6 h-6 rounded-full" />
@@ -53,6 +52,7 @@ export const PostCard = ({ blog, index }) => {
 						{total_comments}
 					</span>
 				</div>
+
 			</div>
 		</Link>
 	);

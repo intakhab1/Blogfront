@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { BlogContext } from "../pages/BlogPage";
 import { UserContext } from "../App";
 import { Toaster, toast } from "react-hot-toast";
-import { Link, useInRouterContext } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 export const BlogEdit = () => {
@@ -105,7 +105,7 @@ export const BlogEdit = () => {
 
 {/* Comment button */}
 					<button onClick={() => setCommentsWrapper(preVal => !preVal)}
-          className="flex items-center justify-center bg-grey/80 w-10 h-10 rounded-full ">
+          					className="flex items-center justify-center bg-grey/80 w-10 h-10 rounded-full ">
 						<i className="fi fi-rr-comment-dots"></i>
 					</button>
 					<p className="text-xl text-dark-grey">{total_comments}</p>

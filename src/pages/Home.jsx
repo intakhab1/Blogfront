@@ -18,8 +18,9 @@ export const Home = () => {
 
     let [pageState , setPageState] = useState("latest")
     
-    let categories = ["fiction","tech","history","art", "movie" , "food","music", "web", "war", "hollywood", "finance", "fashion", "travel"]   
-    
+    let categories = ["fiction", "tech", "history", "art", "movie", "food", "music", "web", "war", "hollywood", "finance", "fashion", "travel"]  
+    let latestCategories = ["fiction", "food", "history", "art", "movie", "war", "finance", "fashion", "travel"]  
+
     // Home/Latest blogs
     const fetchTrendingPosts = ({ page = 1 }) =>{
         axios.post(import.meta.env.VITE_SERVER_DOMAIN + "/latest-blogs", { page })
@@ -126,16 +127,25 @@ export const Home = () => {
         <div className="w-full">
             {/* <InPageNavigation routes={[pageState , "trending"]} defaultHidden={["trending"]}> */}
             <InPageNavigation routes={[pageState , "trending"]} >
-
-                <>  
+                <>   
+                    <div className="flex gap-3 flex-wrap mb-6 md:hidden lg:hidden">
+                        {   
+                            latestCategories.map((category, i) =>{
+                                return (<button onClick={handleTagFilterBtn} 
+                                            className={"latestTag " + (pageState === category ? "bg-black text-white" : "")} 
+                                            key={i}
+                                            >{category}
+                                        </button>
+                                )
+                            })
+                        }
+                    </div>
                     {
                         blogs === null ? (<Loader/>)
                         : 
                         blogs.currentPageDocs.length ? (blogs.currentPageDocs.map((blog, i) => {
                                         return ( <PageAnimation transition={{duration: 1, delay: i*.1 }} key={i}>
-
                                                     <PostCard blog={blog} index={i} />
-                                                    {/* <BlogPostCard content={blog} author={blog.author.personal_info} /> */}
                                                 </PageAnimation>)
                                         }))
                                         :
@@ -148,8 +158,6 @@ export const Home = () => {
                     : 
                     trendingBlog.length ? (trendingBlog.map((blog, i) =>{
                                         return  (<PageAnimation transition={{duration: 1, delay: i*.1 }} key={i}>
-
-                                                    {/* <PostCard blog={blog} index={i} /> */}
                                                     <BlogPostCard content={blog} author={blog.author.personal_info} />
                                                 </PageAnimation>)
                                          }))
@@ -179,6 +187,7 @@ export const Home = () => {
                         }
                     </div>
                 </div>
+
                 <div >
                     <div className="flex  gap-1 mb-4 ">
                         <h1 className="font-medium text-xl">Trending</h1>
@@ -197,6 +206,7 @@ export const Home = () => {
 
                     }
                 </div>
+
             </div>
         </div>
         
