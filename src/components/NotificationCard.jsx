@@ -80,13 +80,13 @@ export const NotificationCard = ({ data, index, notificationState }) => {
 			<div className="flex gap-2 mb-2">
 				<Link
 					to={`/user/${username}`}
-					className="flex-none w-14 h-14 rounded-full"
+					className="flex-none w-12 h-12 rounded-full"
 				>
-					<img src={profile_img} className="flex-none w-14 h-14 rounded-full" />
+					<img src={profile_img} className="flex-none w-12 h-12 rounded-full" />
 				</Link>
 
 				<div className="w-full ">
-					<h1 className="flex gap-2 text-xl font-medium text-dark-grey">
+					<h1 className="flex mt-3 gap-2 text-xl font-medium text-dark-grey">
 						<span className="lg:inline-block hidden capitalize">
 							{fullname}
 						</span>
