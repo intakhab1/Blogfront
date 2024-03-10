@@ -5,6 +5,7 @@ import axios from "axios";
 import { BlogContext } from "../pages/BlogPage";
 
 export const CommentField = ({
+	text,
 	action,
 	index = undefined,
 	replyingTo = undefined,
@@ -104,15 +105,20 @@ export const CommentField = ({
 	return (
 		<>
 			<Toaster />
-			<textarea
-				value={comment}
-				onChange={(e) => setComment(e.target.value)}
-				placeholder="Add a comment..."
-				className="input-box h-16 pl-5 placeholder:text-dark-grey resize-none overflow-auto"
-			></textarea>
-			<button onClick={handleComment} className="btn-dark mt-5 px-3 text-md">
-				{action}
-			</button>
+			<div className="flex gap-2 -mt-6 relative">
+				<input
+					value={comment}
+					onChange={(e) => setComment(e.target.value)}
+					placeholder={`Add a ${text}...`}
+					className="input-box h-10 pl-5 placeholder:text-dark-grey placeholder:opacity-50 resize-none overflow-auto no-scrollbar"
+				></input>
+				<button onClick={handleComment} className="absolute top-1/2 right-3 transform -translate-y-1/2 focus:outline-none">
+				<i className="fi fi-rs-paper-plane text-sm"></i>
+
+					{/* {action} */}
+				</button>
+			</div>
+
 		</>
 	);
 };

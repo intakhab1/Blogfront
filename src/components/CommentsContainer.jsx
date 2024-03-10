@@ -68,21 +68,22 @@ export const CommentsContainer = () => {
 			}
 		>
 			<div className="relative">
-				<h1 className="font-medium text-xl">Comments</h1>
-				<p className="mt-2 w-[70%] line-clamp-1 text-dark-grey text-lg">
+				<h1 className="font-medium text-md">Comments</h1>
+				<p className="mt-2 w-[70%] line-clamp-1 text-dark-grey text-md">
 					{title}
 				</p>
 
 				{/* Comment close button */}
 				<button
 					onClick={() => setCommentsWrapper((preVal) => !preVal)}
-					className="absolute flex justify-center items-center w-12 h-12 right-0 top-0 bg-grey rounded-full "
+					className="absolute flex justify-center items-center w-8 h-8 right-0 top-0 bg-grey rounded-full "
 				>
-					<i className="fi fi-br-cross text-xl mt-1"></i>
+					<i className="fi fi-br-cross text-sm mt-1"></i>
 				</button>
 			</div>
-			<hr className="my-8 -ml-10 w-[120%] border-grey " />
-			<CommentField action="comment" />
+			<hr className="mt-4 mb-10 -ml-10 w-[120%] border-grey " />
+			<CommentField text="comment" action="comment" />
+			
 			{commentsArray && commentsArray.length ? (
 				commentsArray.map((comment, i) => {
 					return (
@@ -98,6 +99,7 @@ export const CommentsContainer = () => {
 			) : (
 				<NoData message="No comments yet" />
 			)}
+
 			{total_parent_comments > totalParentComments ? (
 				<button
 					onClick={LoadMoreComments}

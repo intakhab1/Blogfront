@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
-import { getDate } from "../common/date";
+import { getDate, getFullDay } from "../common/date";
 import { UserContext } from "../App";
 import toast, { Toaster } from "react-hot-toast";
 import { CommentField } from "./CommentField";
 import { BlogContext } from "../pages/BlogPage";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export const CommentCard = ({ index, leftVal, commentData }) => {
 	let {
@@ -186,39 +187,51 @@ export const CommentCard = ({ index, leftVal, commentData }) => {
 	return (
 		<div className="w-full" style={{ paddingLeft: `${leftVal * 10}px` }}>
 			<Toaster />
-			<div className="my-5 p-6 rounded-md border border-grey">
-				<div className="flex gap-3 items-center mb-8">
-					<img src={profile_img} className="w-6 h-6 rounded-full" />
-					<p className="line-clamp-1">
-						{fullname} @{commented_by_username}
-					</p>
-					<p className="min-w-fit">{getDate(commentedAt)}</p>
+			<div className="my-2 p-2 rounded-md  border-grey">
+				<div className="flex gap-3 items-center mb-1 ">
+
+					<Link
+						to={`/user/${commented_by_username}`}
+					>
+						<img src={profile_img} className="flex-none w-6 h-6 rounded-full " />
+					</Link>
+
+						<p className="line-clamp-1 ">
+						<Link
+						to={`/user/${commented_by_username}`}
+					>
+							{fullname} @{commented_by_username}
+					</Link>
+
+						</p>
+
+					<p className="min-w-fit opacity-50 text-sm">{getFullDay(commentedAt)}</p>
 				</div>
-				<p className="font-gelasio text-xl ml-3">{comment}</p>
-				<div className="flex gap-5 items-center mt-5">
+
+				<p className=" text-md ml-9">{comment}</p>
+
+				<div className="flex gap-5 items-center ml-4">
 					{commentData.isReplyLoaded ? (
 						<button
 							onClick={hideReply}
-							className="flex items-center gap-2 text-dark-grey p-2 px-3 hover:bg-grey/30 rounded-md "
+							className="ml-2 flex items-center gap-2 text-dark-grey p-2 px-3 rounded-md min-w-fit opacity-50 text-sm "
 						>
-							<i className="fi fi-rs-comment-dots"></i>Hide replies
+						... Hide replies
 						</button>
 					) : (
 						<button
 							onClick={ViewReplies}
-							className="flex items-center gap-2 text-dark-grey p-2 px-3 hover:bg-grey/30 rounded-md "
-						>
-							<i className="fi fi-rs-comment-dots"></i>
-							{children.length} replies
+							className="ml-2 flex items-center gap-2 text-dark-grey p-2 px-3 rounded-md min-w-fit opacity-50 text-sm"
+						>	... View {children.length} replies
 						</button>
 					)}
-					<button onClick={handleReply} className="underline">
+					<button onClick={handleReply} className="underline min-w-fit opacity-50 text-sm">
 						Reply
 					</button>
 					{username == commented_by_username || username == blog_author ? (
 						<button
 							onClick={deleteComment}
-							className="flex items-center p-2 px-3 rounded-md border border-grey ml-auto hover:bg-red/30 hover:text-red"
+							className="flex items-center p-2 px-3 rounded-md ml-auto hover:text-red opacity-50 text-sm"
 						>
 							<i className="fi fi-rr-trash pointer-events-none"></i>
 						</button>
@@ -226,9 +239,11 @@ export const CommentCard = ({ index, leftVal, commentData }) => {
 						""
 					)}
 				</div>
+
 				{isReplying ? (
-					<div className="mt-8">
+					<div className="mt-7 ml-9 mb-6">
 						<CommentField
+							text="reply"
 							action="reply"
 							index={index}
 							replyingTo={_id}
