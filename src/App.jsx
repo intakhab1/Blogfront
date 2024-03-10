@@ -24,7 +24,7 @@ const defaultThemePreference = () => {
 
 const App = () => {
 	const [userAuth, setUserAuth] = useState({});
-	const [theme, setTheme] = useState(() => defaultThemePreference() ? "dark" : "light" );
+	const [theme, setTheme] = useState(() => defaultThemePreference() ? "light" : "dark" );
 
 	useEffect(() => {
 		let userInSession = lookInSession("user");
