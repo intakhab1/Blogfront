@@ -1,6 +1,7 @@
 {
     "rewrites": [
-      { "source": "/*", "destination": "/", "statusCode": 200 }
+        {"source": "/(.*)", "destination": "/index.html"}
+
     ]
   }
   
