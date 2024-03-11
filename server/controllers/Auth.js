@@ -6,13 +6,13 @@ import { nanoid } from "nanoid";
 
 dotenv.config();
 
-// google auth
-import admin from "firebase-admin";
-import serviceAccountKey from "../socialmedia-d41db-firebase-adminsdk-pt12x-eed21b8002.json" assert { type: "json" };
-import { getAuth } from "firebase-admin/auth";
-admin.initializeApp({
-	credential: admin.credential.cert(serviceAccountKey),
-});
+// // google auth
+// import admin from "firebase-admin";
+// import serviceAccountKey from "../socialmedia-d41db-firebase-adminsdk-pt12x-eed21b8002.json" assert { type: "json" };
+// import { getAuth } from "firebase-admin/auth";
+// admin.initializeApp({
+// 	credential: admin.credential.cert(serviceAccountKey),
+// });
 
 // functions
 const generateUniqueUsername = async (email) => {
