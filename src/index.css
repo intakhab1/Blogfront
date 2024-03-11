@@ -30,7 +30,7 @@ body {
 *::-webkit-scrollbar-thumb {
   background-color: #afb2bf;
   border-radius: 10px;
-  /* visibility: hidden; */
+  visibility: hidden;
 }
 
 *:active::-webkit-scrollbar-thumb,
