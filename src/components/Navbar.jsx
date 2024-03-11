@@ -138,7 +138,7 @@ export const Navbar = () => {
 						</>
 					) : (
 						<>
-							<Link to="/login" className="btn-dark sm:p-2 sm:px-6 py-1.5 px-4 ml-4 text-md ">
+							<Link to="/login" className="btn-dark sm:p-2 sm:px-6 py-1 px-3 ml-4 text-md ">
 								Log in
 							</Link>
 							<Link to="/signup" className="btn-light py-2 hidden md:block text-md">
