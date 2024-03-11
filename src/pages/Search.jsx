@@ -82,8 +82,8 @@ export const Search = () => {
 		);
 	};
 	return (
-		<section className="h-cover flex justify-center gap-10">
-			<div className="w-full">
+		<section className="h-cover flex justify-center gap-10 ">
+			<div className="w-full ">
 				<InPageNavigation
 					routes={[`Search Reasults from "${query}"`, "Related Accounts"]}
 					defaultHidden={["Related Accounts"]}
@@ -114,8 +114,8 @@ export const Search = () => {
 					<SearchProfileCard />
 				</InPageNavigation>
 			</div>
-			<div className="hidden md:block lg:block min-w[40%] lg:min-w-[400px] md:min-w-[250px]  max-w-min border-l border-grey pl-8 pt-3 max-md-hidden ">
-				<p className="font-medium text-xl mb-8">Profiles related to search</p>
+			<div className=" hidden md:block lg:block min-w[40%] lg:min-w-[400px] md:min-w-[250px]  max-w-min border-l border-grey pl-8 pt-3 max-md-hidden ">
+				<p className="font-medium text-xl mb-8 ">Profiles related to search</p>
 				<SearchProfileCard />
 			</div>
 		</section>

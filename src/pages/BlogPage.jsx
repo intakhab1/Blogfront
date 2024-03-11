@@ -139,7 +139,7 @@ export const BlogPage = () => {
 						<BlogEdit />
 
 						<div className="font-gelasio my-12 blog-page-content">
-							{content[0].blocks?.map((block, i) => {
+							{content[0]?.blocks?.map((block, i) => {
 								return (
 									<div className="md:my-8 my-4" key={i}>
 										<BlogContent block={block} />
