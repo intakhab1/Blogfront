@@ -108,7 +108,9 @@ export const Profile = () => {
                     <img src={profile_img} className='w-48 h-48 bg-grey rounded-full md:w-32 md:h-32'/>
                     <h1 className='text-2xl font-medium' >@{profile_username} </h1>
                     <p className='text-xl capitalize h-6'>{fullname}</p>
-                    <p>{total_posts.toLocaleString()} Blogs {total_reads.toLocaleString()} Reads </p>
+                    <p>{total_posts.toLocaleString()} Blogs </p>
+                    <p>{total_reads.toLocaleString()} People viewed your post </p>
+
                     <div className='mt-2 gap-4 flex'>
                         { 
                             profileId === username ? 

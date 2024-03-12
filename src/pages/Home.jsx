@@ -126,7 +126,7 @@ export const Home = () => {
         {/* HOME/LATEST BLOGS  */}
         <div className="w-full">
             {/* <InPageNavigation routes={[pageState , "trending"]} defaultHidden={["trending"]}> */}
-            <InPageNavigation routes={[pageState , "trending"]} >
+            <InPageNavigation routes={[pageState , "trending", "career"]} >
                 <>   
                     <div className="flex gap-3 flex-wrap mb-6 md:hidden lg:hidden">
                         {   

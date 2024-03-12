@@ -117,11 +117,11 @@ export const BlogPage = () => {
 								<div className="flex gap-2 items-center mb-6">
 									<Link
 										to={`/user/${author_username}`}>
-										<img src={profile_img} className="w-10 h-10 rounded-full" />
+										<img src={profile_img} className="w-10 h-10 rounded-full hover:opacity-50" />
 									</Link>
 									<Link
 										to={`/user/${author_username}`}>
-										<p className="line-clamp-1">{fullname} </p>
+										<p className="line-clamp-1 hover:opacity-50">{fullname} </p>
 									</Link>
 									<Link
 										to={`/user/${author_username}`}

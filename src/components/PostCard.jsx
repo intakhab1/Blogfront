@@ -21,21 +21,20 @@ export const PostCard = ({ blog, index }) => {
 		userAuth: { username, token },
 		} = useContext(UserContext);
 
-
   return (
 		<div className="w-full gap-8 mb-8 items-center border-b border-grey pb-5 ">
 			<div className="flex gap-2 items-center mb-7">
 				<Link
 					to={`/user/${author_username}`}>
-					<img src={profile_img} className="w-8 h-8 rounded-full" />
+					<img src={profile_img} className="w-8 h-8 rounded-full hover:opacity-50" />
 				</Link>
 				<Link
 					to={`/user/${author_username}`}>
-					<p className="line-clamp-1">{fullname} </p>
+					<p className="line-clamp-1 hover:opacity-50">{fullname} </p>
 				</Link>
 				<Link
 					to={`/user/${author_username}`}>
-					<p className="line-clamp-1 opacity-50 text-sm ">@{author_username}</p>
+					<p className="line-clamp-1 opacity-50 text-sm underline">@{author_username}</p>
 				</Link>
 				<p className="min-w-fit opacity-50 text-sm">{getFullDay(publishedAt)}</p>
 			</div>
