@@ -20,17 +20,20 @@ export const UserNavigationPanel = () => {
     >
     <div className="bg-white absolute right-0 border border-grey w-60 duration-200">
         <Link to="/editor" className="flex gap-2 link md:hidden pl-8 py-4">
-            {/* <i className="fi fi-rr-file-edit"></i> */}
+            <i className="fi fi-rr-file-edit"></i>
             <p>Write blog</p>
         </Link>
-        <Link to={`/user/${username}`} className="link pl-8 py-4">
-            Profile
+        <Link to={`/user/${username}`} className="flex gap-2 link pl-8 py-4">
+        <i className="fi fi-rr-user"></i>
+            View Profile
         </Link>
-        <Link to="/dashboard/blogs" className="link pl-8 py-4">
-            Dashboard
+        <Link to="/dashboard/blogs" className="flex gap-2 link pl-8 py-4">
+        <i className="fi fi-rs-chart-pie-alt"></i>
+            Go To Dashboard
         </Link>
-        <Link to="/settings/edit-profile" className="link pl-8 py-4">
-            Settings
+        <Link to="/settings/edit-profile" className="flex gap-2 link pl-8 py-4">
+        <i className="fi fi-rr-settings"></i>
+            Change Settings
         </Link>
         <span className="absolute border-t border-grey w-[100%]"></span>
         <button className="text-left p-4 hover:bg-grey w-full pl-8 py-4"

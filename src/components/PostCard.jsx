@@ -76,7 +76,7 @@ export const PostCard = ({ blog, index }) => {
 				<div className="flex items-center gap-4 mr-3">
 					{username === author_username ? (
 						<Link to={`/editor/${blog_id}`}
-							className="hover:text-purple opacity-50 text-sm ">
+							className="hover:text-purple opacity-50 text-sm hover:opacity-100">
 							Edit post
 						</Link>
 					) : (

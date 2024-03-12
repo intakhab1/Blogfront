@@ -110,7 +110,7 @@ export const BlogEdit = () => {
 						{username === author_username ? (
 							<Link
 								to={`/editor/${blog_id}`}
-								className="hover:text-purple opacity-50 text-sm "
+								className="hover:text-purple opacity-50 text-sm hover:opacity-100"
 							>
 								Edit post
 							</Link>

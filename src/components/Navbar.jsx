@@ -95,17 +95,19 @@ export const Navbar = () => {
 					>
 						<i className="fi fi-rr-search text-xl absolute"></i>
 					</button>
-					<Link to="/editor" className=" md:flex gap-2 rounded-full link ">
-						<i className="fi fi-rr-file-edit"></i>
-						<p className="hidden md:block lg:block xl:block">Write</p>
+
+					<Link to="/editor" className=" md:flex gap-2 w-11 h-11 lg:rounded-full rounded-full link lg:link flex items-center justify-center ">
+						<i className="fi fi-rr-file-edit sm:hover:opacity-50"></i>
+						<p className="hidden md:block lg:block xl:block p-2 hover:opacity-50 hover:bg-grey hover:rounded-full ">Write</p>
 					</Link>
+					
 					<button
 						className="w-11 h-11 rounded-full relative hover:bg-black/10"
 						onClick={changeTheme}
 					>
 						<i
 							className={
-								"text-xl block mt-1 fi fi-rr-" +
+								"text-xl  block mt-1 fi fi-rr-" +
 								(theme == "light" ? "moon" : "brightness")
 							}
 						></i>
@@ -113,7 +115,7 @@ export const Navbar = () => {
 					{token ? (
 						<>
 							<NavLink to="/dashboard/notifications">
-								<button className="w-11 h-11 rounded-full relative hover:bg-black/10">
+								<button className="w-11 h-11 rounded-full relative hover:bg-black/10 ">
 									<i className="fi fi-rr-bell text-xl block mt-1"></i>
 									{new_notification ? (
 										<span className="absolute w-2 h-2 bg-red rounded-full z-10 top-3 right-3 "></span>
@@ -130,7 +132,7 @@ export const Navbar = () => {
 								<button className="w-11 h-11 mt-1">
 									<img
 										src={profile_img}
-										className="w-full h-full object-cver rounded-full "
+										className="w-full h-full object-cover rounded-full "
 									/>
 								</button>
 								{navPanelVisibility ? <UserNavigationPanel /> : ""}

@@ -128,7 +128,7 @@ height: 100%;
 	}
 
 	.link {
-		@apply text-dark-grey hover:text-black hover:bg-grey p-3 px-4 block opacity-75;
+		@apply text-dark-grey hover:text-black hover:bg-black/10 p-3 px-4 block opacity-100;
 	}
 
 	.hide {
