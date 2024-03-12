@@ -18,9 +18,9 @@ export const BlogPostCard = ({ content, author }) => {
 			to={`/blog/${id}`}
 			className="flex gap-8 items-center border-b border-grey pb-5 mb-8"
 		>
-			<div className="w-full">
-				<div className="flex gap-2 items-center mb-7">
-					<img src={profile_img} className="w-6 h-6 rounded-full" />
+			<div className="w-full overflow-auto no-scrollbar">
+				<div className="flex gap-2 items-center mb-7 ">
+					<img src={profile_img} className=" flex-none w-8 h-8 rounded-full" />
 					<p className="line-clamp-1">{fullname} </p>
 					<p className="line-clamp-1 opacity-50 text-sm ">@{username}</p>
 					<p className="min-w-fit opacity-50 text-sm">{getFullDay(publishedAt)}</p>
@@ -31,8 +31,8 @@ export const BlogPostCard = ({ content, author }) => {
 					{desc}
 				</p>
 
-				<div className="flex gap-4 mt-7 mb-7">
-					<span className="btn-light py-1 px-4">{tags[0]}</span>
+				<div className="flex gap-2 mt-7 mb-7 ">
+					<span className="btn-light py-1 px-4  ">{tags[0]}</span>
 					<span className="ml-3 flex items-center gap-2 text-dark-grey">
 						<i className="fi fi-rr-heart text-xl"></i>
 						{total_likes}
@@ -45,7 +45,7 @@ export const BlogPostCard = ({ content, author }) => {
 				</div>
 			</div>
 
-			<div className="h-40 aspect-square bg-grey">
+			<div className="h-40 aspect-square bg-grey ">
 				<img
 					src={banner}
 					className="w-full h-full aspect-square object-cover"

@@ -4,8 +4,9 @@ import { UserContext } from "../App";
 import { Toaster, toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { currentBlogContext } from "./PostCard";
 
-export const BlogEdit = () => {
+export const HomeBlogEdit = () => {
 	let {
 		blog,
 		blog: {
@@ -21,8 +22,8 @@ export const BlogEdit = () => {
 		setBlog,
 		isLiked,
 		setIsLiked,
-    setCommentsWrapper,
-	} = useContext(BlogContext);
+    	setCommentsWrapper,
+	} = useContext(currentBlogContext);
 
 	let {
 		userAuth: { username, token },
@@ -52,8 +53,12 @@ export const BlogEdit = () => {
 	const handleLike = () => {
 		if (token) {
 			setIsLiked((preVal) => !preVal);
+
 			!isLiked ? total_likes++ : total_likes--;
+			console.log(isLiked);
+			console.log(_id)
 			setBlog({ ...blog, activity: { ...activity, total_likes } });
+
 			// like request
 			axios
 				.post(
@@ -82,30 +87,30 @@ export const BlogEdit = () => {
 	return (
 		<>
 			<Toaster />
-			{/* <hr className="border-grey my-2 -mt-4" /> */}
-			<div className="flex gap-6 justify-between sm:-mt-4 -mt-6 mb-12 ">
+			<hr className="border-grey my-2 -mt-4" />
+			<div className="flex gap-6 justify-between ">
 
 {/* Like button */}
 				<div className="flex gap-3 items-center ml-3">
 					<button
 						onClick={handleLike}
 						className={
-							"flex items-center gap-2 justify-center rounded-full  " +
+							"flex items-center gap-2 justify-center rounded-full " +
 								(isLiked ? " text-red" : "")
 						}
 					>
 						<i
-							className={"text-xl fi " + (isLiked ? "fi-sr-heart" : "fi-rr-heart")}
+							className={"fi " + (isLiked ? "fi-sr-heart" : "fi-rr-heart")}
 						></i>
 					</button>
-					<p className="text-md text-dark-grey">{total_likes}</p>
+					<p className="text-xl text-dark-grey">{total_likes}</p>
 
 {/* Comment button */}
 					<button onClick={() => setCommentsWrapper(preVal => !preVal)}
           					className="flex items-center justify-center ">
-						<i className="text-xl fi fi-rr-comment-dots"></i>
+						<i className="fi fi-rr-comment-dots"></i>
 					</button>
-					<p className="text-md text-dark-grey">{total_comments}</p>
+					<p className="text-xl text-dark-grey">{total_comments}</p>
 
 				</div>
 
@@ -114,7 +119,7 @@ export const BlogEdit = () => {
 					{username === author_username ? (
 						<Link
 							to={`/editor/${blog_id}`}
-							className="hover:text-purple"
+							className="underline hover:text-purple"
 						>
 							Edit
 						</Link>
@@ -124,7 +129,7 @@ export const BlogEdit = () => {
 					<Link
 						to={`https://twitter.com/intent/tweet?text=Read ${title}&url=${location.href}`}
 					>
-						<i className="fi fi-rr-share-square text-xl hover:text-twitter opacity-50"></i>{" "}
+						<i className="fi fi-brands-twitter text-xl hover:text-twitter"></i>{" "}
 					</Link>
 				</div>
 			</div>

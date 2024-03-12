@@ -3,9 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { PageAnimation } from "../common/PageAnimation";
 import Loader from "../components/Loader";
-import { getDate, getFullDay } from "../common/date";
+import { getFullDay } from "../common/date";
 import { BlogEdit } from "../components/BlogEdit";
-import BlogPost from "../components/AboutUser";
 import { BlogPostCard } from "../components/BlogPostCard";
 import { BlogContent } from "../components/BlogContent";
 import {
@@ -110,15 +109,15 @@ export const BlogPage = () => {
 					}}
 				>
 					<CommentsContainer />
-					<div className="max-w-[900px] center max-lg:px-[5vw] py-10 ">
+					<div className="max-w-[900px] center max-lg:px-[5vw] py-6 ">
 						<img src={banner} className="aspect-video" />
-						<div className="mt-12">
+						<div className="mt-4">
 							<h1 className="blog-title">{title}</h1>
-							<div className="flex justify-between my-8  ">
-								<div className="flex gap-2 items-center mb-7">
+							<div className="flex justify-between my-6  ">
+								<div className="flex gap-2 items-center mb-6">
 									<Link
 										to={`/user/${author_username}`}>
-										<img src={profile_img} className="w-6 h-6 rounded-full" />
+										<img src={profile_img} className="w-10 h-10 rounded-full" />
 									</Link>
 									<Link
 										to={`/user/${author_username}`}>
@@ -136,12 +135,12 @@ export const BlogPage = () => {
 							</div>
 						</div>
 
-						<BlogEdit />
+						{/* <BlogEdit /> */}
 
-						<div className="font-gelasio my-12 blog-page-content">
+						<div className="font-gelasio -mt-8 mb-10 blog-page-content">
 							{content[0]?.blocks?.map((block, i) => {
 								return (
-									<div className="md:my-8 my-4" key={i}>
+									<div className="md:my-6 my-6" key={i}>
 										<BlogContent block={block} />
 									</div>
 								);
@@ -152,7 +151,7 @@ export const BlogPage = () => {
 						{/* Render Similar blog if any */}
 						{similarBlogs != null && similarBlogs.length ? (
 							<>
-								<h1 className="text-2xl mt-14 mb-10 font-medium">
+								<h1 className="text-2xl mt-12 mb-6 font-medium">
 									Similar Blogs
 								</h1>
 								{similarBlogs.map((blog, i) => {

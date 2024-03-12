@@ -1002,7 +1002,7 @@ app.post("/user-written-blogs", userMiddleware, (req, res) => {
 	}
 	Blog.find({ author: user_id, draft, title: new RegExp(query, "i") })
 		.skip(skipDocs)
-		.limit(maxLimit)
+		// .limit(maxLimit)
 		.sort({ publishedAt: -1 })
 		.select(" title banner publishedAt blog_id activity desc draft -_id")
 		.then((blogs) => {
