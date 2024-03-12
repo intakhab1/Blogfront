@@ -109,7 +109,7 @@ export const Profile = () => {
                     <h1 className='text-2xl font-medium' >@{profile_username} </h1>
                     <p className='text-xl capitalize h-6'>{fullname}</p>
                     <p>{total_posts.toLocaleString()} Blogs </p>
-                    <p>{total_reads.toLocaleString()} People viewed your post </p>
+                    <p>{total_reads.toLocaleString()} People viewed the post </p>
 
                     <div className='mt-2 gap-4 flex'>
                         { 
