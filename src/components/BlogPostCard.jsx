@@ -8,7 +8,7 @@ export const BlogPostCard = ({ content, author }) => {
 		title,
 		desc,
 		banner,
-		activity: { total_likes, total_comments },
+		activity: { total_likes, total_comments, total_reads },
 		blog_id: id,
 	} = content;
 	let { fullname, profile_img, username } = author;
@@ -18,7 +18,7 @@ export const BlogPostCard = ({ content, author }) => {
 			to={`/blog/${id}`}
 			className="flex gap-8 items-center border-b border-grey pb-5 mb-8"
 		>
-			<div className="w-full overflow-auto no-scrollbar">
+			<div className="w-full overflow-auto no-scrollbar ">
 				<div className="flex gap-2 items-center mb-7 ">
 					<img src={profile_img} className=" flex-none w-8 h-8 rounded-full" />
 					<p className="line-clamp-1">{fullname} </p>
@@ -32,14 +32,18 @@ export const BlogPostCard = ({ content, author }) => {
 				</p>
 
 				<div className="flex gap-2 mt-7 mb-7 ">
-					<span className="btn-light py-1 px-4  ">{tags[0]}</span>
-					<span className="ml-3 flex items-center gap-2 text-dark-grey">
-						<i className="fi fi-rr-heart text-xl"></i>
+					<span className="btn-light py-1 px-3 text-sm ">{tags[0]}</span>
+					<span className="ml-3 text-sm  flex items-center gap-2 text-dark-grey">
+						<i className="fi fi-rr-heart text-md"></i>
 						{total_likes}
 					</span>
-					<span className="ml-3 flex items-center gap-2 text-dark-grey">
-						<i className="fi fi-rr-comment-dots text-xl"></i>
+					<span className="ml-3 text-sm flex items-center gap-2 text-dark-grey">
+						<i className="fi fi-rr-comment-dots text-md"></i>
 						{total_comments}
+					</span>
+					<span className="ml-3 text-sm  flex items-center gap-2 text-dark-grey">
+						<i className="fi fi-rr-eye text-md"></i>
+						{total_reads}
 					</span>
 
 				</div>
