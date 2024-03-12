@@ -107,17 +107,17 @@ export const BlogEdit = () => {
 					</div>
 				</div>
 					<div className="flex items-center gap-4 mr-3">
-						<p className="min-w-fit opacity-50 text-sm">{total_reads} Views</p>
 						{username === author_username ? (
 							<Link
 								to={`/editor/${blog_id}`}
-								className="hover:text-purple"
+								className="hover:text-purple opacity-50 text-sm "
 							>
-								Edit
+								Edit post
 							</Link>
 						) : (
 							""
 						)}
+						<p className="min-w-fit opacity-50 text-sm">{total_reads} Views</p>
 						<Link
 							to={`https://twitter.com/intent/tweet?text=Read ${title}&url=${location.href}`}
 						>

@@ -74,16 +74,16 @@ export const PostCard = ({ blog, index }) => {
 				</div>
 
 				<div className="flex items-center gap-4 mr-3">
-					<p className="min-w-fit opacity-50 text-sm">{total_reads} Views</p>
-
 					{username === author_username ? (
 						<Link to={`/editor/${blog_id}`}
-							className="hover:text-purple">
-							Edit
+							className="hover:text-purple opacity-50 text-sm">
+							Edit post
 						</Link>
 					) : (
 						""
 					)}
+					<p className="min-w-fit opacity-50 text-sm">{total_reads} Views</p>
+
 					<Link to={`https://twitter.com/intent/tweet?text=Read ${title}&url=${location.href}`}>
 						<i className="fi fi-rr-share-square opacity-50 text-sm hover:opacity-100 hover:text-twitter"></i>{" "}
 					</Link>
