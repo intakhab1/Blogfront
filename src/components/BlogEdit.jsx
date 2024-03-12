@@ -85,48 +85,45 @@ export const BlogEdit = () => {
 			{/* <hr className="border-grey my-2 -mt-4" /> */}
 			<div className="flex gap-6 justify-between sm:-mt-4 -mt-6 mb-12 ">
 
-{/* Like button */}
-				<div className="flex gap-3 items-center ml-3">
-					<button
-						onClick={handleLike}
-						className={
-							"flex items-center gap-2 justify-center rounded-full  " +
-								(isLiked ? " text-red" : "")
-						}
-					>
-						<i
-							className={"text-xl fi " + (isLiked ? "fi-sr-heart" : "fi-rr-heart")}
-						></i>
-					</button>
-					<p className="text-md text-dark-grey">{total_likes}</p>
+				<div className="flex gap-6 justify-between items-center ml-3">
+					<div className="flex gap-6 items-center ">
+						<div className="flex gap-6 items-center ">
+							<div className="flex gap-2 items-center">
+								<button onClick={handleLike}
+									className={"flex items-center gap-2 justify-center rounded-full  " +(isLiked ? " text-red" : "")}>
+								<i className={"text-xl fi " + (isLiked ? "fi-sr-heart" : "fi-rr-heart")}></i>
+								</button>
+								<p className="text-md text-dark-grey">{total_likes}</p>
+							</div>
 
-{/* Comment button */}
-					<button onClick={() => setCommentsWrapper(preVal => !preVal)}
-          					className="flex items-center justify-center ">
-						<i className="text-xl fi fi-rr-comment-dots"></i>
-					</button>
-					<p className="text-md text-dark-grey">{total_comments}</p>
-
+							<div className="flex gap-2 items-center">
+								<button onClick={() => setCommentsWrapper(preVal => !preVal)}
+										className="flex items-center justify-center ">
+									<i className="text-xl fi fi-rr-comment-dots"></i>
+								</button>
+								<p className="text-md text-dark-grey">{total_comments}</p>
+							</div>
+						</div>
+					</div>
 				</div>
-
-{/* Twitter */}
-				<div className="flex items-center gap-6 mr-3">
-					{username === author_username ? (
+					<div className="flex items-center gap-6 mr-3">
+						{username === author_username ? (
+							<Link
+								to={`/editor/${blog_id}`}
+								className="hover:text-purple"
+							>
+								Edit
+							</Link>
+						) : (
+							""
+						)}
 						<Link
-							to={`/editor/${blog_id}`}
-							className="hover:text-purple"
+							to={`https://twitter.com/intent/tweet?text=Read ${title}&url=${location.href}`}
 						>
-							Edit
+							<i className="fi fi-rr-share-square text-xl hover:text-twitter opacity-50"></i>{" "}
 						</Link>
-					) : (
-						""
-					)}
-					<Link
-						to={`https://twitter.com/intent/tweet?text=Read ${title}&url=${location.href}`}
-					>
-						<i className="fi fi-rr-share-square text-xl hover:text-twitter opacity-50"></i>{" "}
-					</Link>
-				</div>
+					</div>
+
 			</div>
 
 			<hr className="border-grey my-2" />

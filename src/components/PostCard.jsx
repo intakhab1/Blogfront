@@ -50,7 +50,9 @@ export const PostCard = ({ blog, index }) => {
 				</Link>
 			</div>
 			<p className="mt-4 my-3 text-xl font-gelasio leading-7 md:max-[1100px]:hidden line-clamp-2  ">{desc}</p>
-			<div className="flex gap-6 ml-3  justify-between mt-4 mb-6">
+			
+			<div className="flex gap-6 ml-3 justify-between mt-4 mb-6">
+
 				<div className="flex gap-6 items-center ">
 					<div className="flex gap-6 items-center ">
 						<div className="flex gap-2 items-center">
@@ -61,6 +63,7 @@ export const PostCard = ({ blog, index }) => {
 							</button>
 							<p className="text-md text-dark-grey">{total_likes}</p>
 						</div>
+
 						<div className="flex gap-2 items-center">
 							<button 
 									className="flex items-center gap-2 justify-center ">
@@ -68,12 +71,14 @@ export const PostCard = ({ blog, index }) => {
 							</button>
 							<p className="text-md text-dark-grey">{total_comments}</p>
 						</div>
+						
 					</div>
 				</div>
+
 				<div className="flex items-center gap-6 mr-3">
 					{username === author_username ? (
 						<Link to={`/editor/${blog_id}`}
-							className="underline hover:text-purple">
+							className="hover:text-purple">
 							Edit
 						</Link>
 					) : (
