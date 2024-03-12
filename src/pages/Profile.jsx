@@ -108,8 +108,8 @@ export const Profile = () => {
                     <img src={profile_img} className='w-48 h-48 bg-grey rounded-full md:w-32 md:h-32'/>
                     <h1 className='text-2xl font-medium' >@{profile_username} </h1>
                     <p className='text-xl capitalize h-6'>{fullname}</p>
-                    <p>{total_posts.toLocaleString()} Blogs </p>
-                    <p>{total_reads.toLocaleString()} People viewed the post </p>
+                    <p>Total {total_posts.toLocaleString()} post </p>
+                    <p>Total {total_reads.toLocaleString()} views on all the posts </p>
 
                     <div className='mt-2 gap-4 flex'>
                         { 

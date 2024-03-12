@@ -52,26 +52,27 @@ export const PostCard = ({ blog, index }) => {
 			
 			<div className="flex gap-6 ml-3 justify-between mt-4 mb-6">
 
+				<Link to={`/blog/${blog_id}`}>
 				<div className="flex gap-6 items-center ">
-					<div className="flex gap-6 items-center ">
-						<div className="flex gap-2 items-center">
-							<button 
-								className="flex items-center gap-2 justify-center  " 
-							>
-								<i className="text-xl fi-rr-heart"></i>
-							</button>
-							<p className="text-md text-dark-grey">{total_likes}</p>
-						</div>
-
-						<div className="flex gap-2 items-center">
-							<button 
-									className="flex items-center gap-2 justify-center ">
-								<i className="text-xl fi fi-rr-comment-dots"></i>
-							</button>
-							<p className="text-md text-dark-grey">{total_comments}</p>
-						</div>						
+					<div className="flex gap-2 items-center">
+						<button 
+							className="flex items-center gap-2 justify-center  " 
+						>
+							<i className="text-xl fi-rr-heart"></i>
+						</button>
+						<p className="text-md text-dark-grey">{total_likes}</p>
 					</div>
+
+					<div className="flex gap-2 items-center">
+						<button 
+								className="flex items-center gap-2 justify-center ">
+							<i className="text-xl fi fi-rr-comment-dots"></i>
+						</button>
+						<p className="text-md text-dark-grey">{total_comments}</p>
+					</div>						
 				</div>
+				</Link>
+
 
 				<div className="flex items-center gap-4 mr-3">
 					{username === author_username ? (
