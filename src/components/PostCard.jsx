@@ -14,7 +14,7 @@ export const PostCard = ({ blog, index }) => {
 		banner,
 		desc,
 		activity,
-		activity: { total_likes, total_comments },
+		activity: { total_likes, total_comments, total_reads },
 	} = blog;
 
 		let {
@@ -69,12 +69,13 @@ export const PostCard = ({ blog, index }) => {
 								<i className="text-xl fi fi-rr-comment-dots"></i>
 							</button>
 							<p className="text-md text-dark-grey">{total_comments}</p>
-						</div>
-						
+						</div>						
 					</div>
 				</div>
 
-				<div className="flex items-center gap-6 mr-3">
+				<div className="flex items-center gap-4 mr-3">
+					<p className="min-w-fit opacity-50 text-sm">{total_reads} Views</p>
+
 					{username === author_username ? (
 						<Link to={`/editor/${blog_id}`}
 							className="hover:text-purple">
@@ -84,7 +85,7 @@ export const PostCard = ({ blog, index }) => {
 						""
 					)}
 					<Link to={`https://twitter.com/intent/tweet?text=Read ${title}&url=${location.href}`}>
-						<i className="fi fi-rr-share-square opacity-50 text-xl hover:opacity-100 hover:text-twitter"></i>{" "}
+						<i className="fi fi-rr-share-square opacity-50 text-sm hover:opacity-100 hover:text-twitter"></i>{" "}
 					</Link>
 				</div>
 			</div>

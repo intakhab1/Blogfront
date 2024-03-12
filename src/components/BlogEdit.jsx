@@ -13,7 +13,7 @@ export const BlogEdit = () => {
 			title,
 			blog_id,
 			activity,
-			activity: { total_likes, total_comments },
+			activity: { total_likes, total_comments, total_reads },
 			author: {
 				personal_info: { username: author_username },
 			},
@@ -106,7 +106,8 @@ export const BlogEdit = () => {
 						</div>
 					</div>
 				</div>
-					<div className="flex items-center gap-6 mr-3">
+					<div className="flex items-center gap-4 mr-3">
+						<p className="min-w-fit opacity-50 text-sm">{total_reads} Views</p>
 						{username === author_username ? (
 							<Link
 								to={`/editor/${blog_id}`}
@@ -120,7 +121,7 @@ export const BlogEdit = () => {
 						<Link
 							to={`https://twitter.com/intent/tweet?text=Read ${title}&url=${location.href}`}
 						>
-							<i className="fi fi-rr-share-square text-xl hover:text-twitter opacity-50"></i>{" "}
+							<i className="fi fi-rr-share-square text-sm hover:text-twitter opacity-50"></i>{" "}
 						</Link>
 					</div>
 
