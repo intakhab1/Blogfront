@@ -80,7 +80,11 @@ const userSchema = mongoose.Schema({
         type: [ Schema.Types.ObjectId ],
         ref: 'blogs',
         default: [],
-    }
+    },
+    // To Reset Password
+    token: {
+        type: String,
+    },
 
 }, 
 { 

@@ -31,12 +31,11 @@ export const InputBox = ({
 			<i className={"fi " + icon + " input-icon"}></i>
 
 			{type === "password" ? (
-				<span
-					className={"input-icon left-[auto] right-4 cursor-pointer"}
+				<i
+					className={"fi-rr-eye" + (!passwordVisibility ? "-crossed" : "") + " input-icon left-[auto] right-4 cursor-pointer"}
 					onClick={() => setPasswordVisibility((currentVal) => !currentVal)}
 				>
-					{!passwordVisibility ? "Show" : "Hide"}
-				</span>
+				</i>
 			) : (
 				""
 			)}

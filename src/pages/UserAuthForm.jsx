@@ -94,14 +94,14 @@ export const UserAuthForm = ({ type }) => {
 							: "Join the community today"}
 					</h1>
 					{type !== "log-in" ? (
-						<InputBox name="fullname" type="text" placeholder="Full Name" />
+						<InputBox name="fullname" type="text" placeholder="Full Name" icon="fi-rr-user" />
 					) : (
 						""
 					)}
 
-					<InputBox name="email" type="email " placeholder="Email" />
+					<InputBox name="email" type="email " placeholder="Email" icon="fi-rr-envelope"/>
 
-					<InputBox name="password" type="password" placeholder="Password" />
+					<InputBox name="password" type="password" placeholder="Password" icon="fi-rr-lock" />
 					<button
 						className="btn-dark center mt-14 w-full rounded-md"
 						type="submit"
