@@ -83,7 +83,7 @@ export const BlogEdit = () => {
 		<>
 			<Toaster />
 			{/* <hr className="border-grey my-2 -mt-4" /> */}
-			<div className="flex gap-6 justify-between sm:-mt-4 -mt-6 mb-12 ">
+			<div className="flex gap-6 justify-between sm:-mt-4 -mt-4 mb-4 ">
 
 				<div className="flex gap-6 justify-between items-center ml-3">
 					<div className="flex gap-2 items-center">

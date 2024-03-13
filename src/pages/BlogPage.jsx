@@ -114,7 +114,7 @@ export const BlogPage = () => {
 						<div className="mt-4">
 							<h1 className="blog-title">{title}</h1>
 							<div className="flex justify-between my-6  ">
-								<div className="flex gap-2 items-center mb-6">
+								<div className="flex gap-2 items-center mb-4">
 									<Link
 										to={`/user/${author_username}`}>
 										<img src={profile_img} className="w-10 h-10 rounded-full hover:opacity-50" />
@@ -135,9 +135,9 @@ export const BlogPage = () => {
 							</div>
 						</div>
 
-						{/* <BlogEdit /> */}
+						<BlogEdit />
 
-						<div className="font-gelasio -mt-8 mb-10 blog-page-content">
+						<div className="font-gelasio mb-10 blog-page-content -mt-2">
 							{content[0]?.blocks?.map((block, i) => {
 								return (
 									<div className="md:my-6 my-6" key={i}>
@@ -146,7 +146,9 @@ export const BlogPage = () => {
 								);
 							})}
 						</div>
-						<BlogEdit />
+						{/* <BlogEdit /> */}
+						<hr className="border-grey my-2 " />
+
 						
 						{/* Render Similar blog if any */}
 						{similarBlogs != null && similarBlogs.length ? (
